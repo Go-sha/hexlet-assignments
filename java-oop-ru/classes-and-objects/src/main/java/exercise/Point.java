@@ -1,7 +1,7 @@
 package exercise;
 
 // BEGIN
-public class Point() {
+public class Point {
     private int x;
     private int y;
 
