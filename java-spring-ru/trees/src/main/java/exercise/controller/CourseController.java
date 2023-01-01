@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Arrays;
 import java.util.Optional;
@@ -31,7 +32,7 @@ public class CourseController {
     }
 
     // BEGIN
-    @GetMapping("/{id}/previous/")
+    @GetMapping("/{id}/previous")
     public List<Optional<Course>> getPrevCourses(@PathVariable long id) {
         String path = courseRepository.findById(id).getPath();
 
@@ -42,7 +43,7 @@ public class CourseController {
                     .collect(Collectors.toList());
         }
 
-        return null;
+        return new ArrayList<>();
     }
     // END
 
